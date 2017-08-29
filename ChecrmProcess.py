@@ -6,7 +6,7 @@
 #### The "re.search(".*[\/|\s]+(rm)\s+", line)" , this will catch the string "rm" 
 #### and separate the element in the list.
 #### the "line.strip()"  fuction is Just been used to remove all the outside whitespace including \n.
-#### Author : Karn Kumar (karn@cadence.com).
+#### Author : Karn Kumar (karn.itguy@gmail.com).
 #### V.01, 5/15/2017
 #### V.02, 5/19/2017 .. added redirection capability and sendmail.
 ##################################################################################################################
@@ -58,9 +58,9 @@ def ps_Mail():
     if os.path.exists(filename) and os.path.getsize(filename) > 0:
         mailp = Popen(["/usr/sbin/sendmail", "-t", "-oi"], stdin=PIPE)
         msg = MIMEMultipart('alternative')
-        msg['To'] = "karn@cadence.com"
+        msg['To'] = "karn.itguy@gmail.com"
         msg['Subject'] = "Uhh!! Unsafe rm process Seen"
-        msg['From'] = "psCheck@cadence.com"
+        msg['From'] = "psCheck@gmail.com"
         msg1 = MIMEText(f.read(),  'text')
         msg.attach(msg1)
         mailp.communicate(msg.as_string())
